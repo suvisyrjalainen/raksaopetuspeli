@@ -6,7 +6,7 @@ using UnityEngine;
 public class PickUp : MonoBehaviour
 {
 
-    float throwForce = 800f;
+    float throwForce = 1000f;
     Vector3 objectPos;
     float distance;
 
