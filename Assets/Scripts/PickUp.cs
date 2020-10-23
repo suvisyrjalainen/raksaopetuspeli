@@ -62,4 +62,22 @@ public class PickUp : MonoBehaviour
     {
         isHolding = false;
     }
+	
+	
+	//PickUp is button "E" (work in progress!)
+	/*void OnTriggerEnter(Collider other)
+	{
+		KeyCode key = KeyCode.E;
+	
+		if(Input.GetKeyDown(Key))
+		{
+			isHolding = true;
+			item.GetComponent<Rigidbody>().useGravity = false;
+			item.GetComponent<Rigidbody>().detectCollisions = true;
+		}else{
+			isHolding = false;
+		}
+	}*/
+	
+	
 }
