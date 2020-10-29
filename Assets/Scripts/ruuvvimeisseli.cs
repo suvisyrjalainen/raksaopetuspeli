@@ -9,7 +9,7 @@ public class ruuvvimeisseli : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        Quiz_canvas.gameObject.SetActive(false);
     }
 
     // Update is called once per frame
