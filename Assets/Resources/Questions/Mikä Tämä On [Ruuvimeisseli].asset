@@ -10,8 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 42a3e446aa9f22c41aa08cdd7f9a7a84, type: 3}
-  m_Name: New Quiz Question
+  m_Name: "Mik\xE4 T\xE4m\xE4 On [Ruuvimeisseli]"
   m_EditorClassIdentifier: 
-  question: "Mik\xE4 t\xE4m\xE4 ty\xF6kalu on"
+  question: "Mik\xE4 T\xE4m\xE4 On"
   answers: []
   correctAnswer: 0
