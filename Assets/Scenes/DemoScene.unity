@@ -1814,7 +1814,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 240786459}
   m_LocalRotation: {x: 0.13180673, y: -0, z: -0, w: 0.9912754}
-  m_LocalPosition: {x: 0, y: 2.12, z: -4.08}
+  m_LocalPosition: {x: 0, y: 2.12, z: -4.19}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1448246565}
@@ -1836,7 +1836,7 @@ MonoBehaviour:
   mouseSensivity: 800
   minXAngle: -70
   maxXAngle: 90
-  playerBody: {fileID: 0}
+  playerBody: {fileID: 1008186150}
   mouseX: 0
   mouseY: 0
 --- !u!1 &247412650
@@ -6788,6 +6788,7 @@ MonoBehaviour:
   groundMask:
     serializedVersion: 2
     m_Bits: 256
+  anim: {fileID: 0}
 --- !u!1 &1023983014
 GameObject:
   m_ObjectHideFlags: 0
@@ -11930,6 +11931,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 9500000, guid: 45ee962cb9348fb468cc775b81ed95c9, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 8591f944b7a091643b9cd0a662d179e8, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 45ee962cb9348fb468cc775b81ed95c9, type: 3}
 --- !u!1 &1806790678

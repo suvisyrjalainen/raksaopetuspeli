@@ -20,10 +20,14 @@ public class PlayerMovement : MonoBehaviour
 
     private Vector3 move;
 
+    public Animator anim;
+
 
     // Start is called before the first frame update
     void Start()
+
     {
+        anim = GetComponentInChildren<Animator>();
         //controller = GetComponent<CharacterController>();
     }
 
@@ -43,6 +47,16 @@ public class PlayerMovement : MonoBehaviour
         {
             velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
         }
+
+        //anim.SetInteger("KavelyCheck", 1);
+        if (Input.GetAxis("Vertical") != 0)
+        {
+            anim.SetInteger("KavelyCheck", 1);
+        }else
+        {
+            anim.SetInteger("KavelyCheck", 0);
+        }
+
 
         velocity.y += gravity * Time.deltaTime;
         controller.Move(velocity * Time.deltaTime);
