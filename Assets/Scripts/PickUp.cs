@@ -21,7 +21,7 @@ public class PickUp : MonoBehaviour
 
         distance = Vector3.Distance(item.transform.position, tempParent.transform.position);
 
-        if(distance >= 1f)
+        if(distance >= 20f)
         {
             isHolding = false;
         }
