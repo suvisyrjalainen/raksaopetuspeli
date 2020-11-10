@@ -23,14 +23,19 @@ public class Mouselook : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+
         SetCursorPos(xPos, yPos);
+        //Cursor.lockState = CursorLockMode.Locked;  
+
     }
 
     // Update is called once per frame
     void Update()
     {
+
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
+
         mouseX = Input.GetAxis("Mouse X") * mouseSensivity * Time.deltaTime;
         mouseY = Input.GetAxis("Mouse Y") * mouseSensivity * Time.deltaTime;
 
@@ -39,6 +44,8 @@ public class Mouselook : MonoBehaviour
 
         transform.localRotation = Quaternion.Euler(xRotation, 0f, 0f);
         playerBody.Rotate(Vector3.up * mouseX);
+
         SetCursorPos(xPos, yPos);
+
     }
 }
