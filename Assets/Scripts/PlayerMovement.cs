@@ -22,6 +22,8 @@ public class PlayerMovement : MonoBehaviour
 
     public Animator anim;
 
+    public Vector3 point;
+
 
     // Start is called before the first frame update
     void Start()
@@ -39,7 +41,16 @@ public class PlayerMovement : MonoBehaviour
         float xAxis = Input.GetAxis("Horizontal");
         float zAxis = Input.GetAxis("Vertical");
 
-        move = transform.right * xAxis + transform.forward * zAxis;
+        move = transform.right * 0 + transform.forward * zAxis;
+
+        //xRotation -= mouseY;
+        //xRotation = Mathf.Clamp(xRotation, minXAngle, maxXAngle);
+
+        //transform.localRotation = Quaternion.Euler(xAxis, 0f, 0f);
+        //transform.Rotate(Vector3.up * xAxis);
+
+        
+        
 
         controller.Move(move * moveSpeed * Time.deltaTime);
 
@@ -47,6 +58,15 @@ public class PlayerMovement : MonoBehaviour
         {
             velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
         }
+
+
+        if (Input.GetKey(KeyCode.A))
+        {
+            transform.RotateAround(point, Vector3.up, 20 * Time.deltaTime);
+        }
+        else if (Input.GetKey(KeyCode.D)) { 
+            transform.RotateAround(point, -Vector3.up, 20 * Time.deltaTime);
+        }     
 
         //anim.SetInteger("KavelyCheck", 1);
         if (Input.GetAxis("Vertical") != 0)
