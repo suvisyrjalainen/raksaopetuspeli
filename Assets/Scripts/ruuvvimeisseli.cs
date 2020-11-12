@@ -26,6 +26,23 @@ public class ruuvvimeisseli : MonoBehaviour
     {
         Quiz_canvas.gameObject.SetActive(false);
 
+        
+
+        
+
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        scores.text = updated_scores_string;
+    }
+
+    void OnMouseDown()
+    {
+        Debug.Log("Pressed left click.");
+        Quiz_canvas.gameObject.SetActive(true);
+        
         button1.GetComponentInChildren<Text>().text = "Ruuvimeisseli";
         button2.GetComponentInChildren<Text>().text = "Ruuvinväännin";
         button3.GetComponentInChildren<Text>().text = "Jakoavain";
@@ -53,22 +70,6 @@ public class ruuvvimeisseli : MonoBehaviour
         cb3.selectedColor = wrongColor;
         cb3.fadeDuration = 1;
         button3.colors = cb3;
-
-        
-
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        scores.text = updated_scores_string;
-    }
-
-    void OnMouseDown()
-    {
-        Debug.Log("Pressed left click.");
-        Quiz_canvas.gameObject.SetActive(true);
-
     }
 
     void TaskOnClickWithAnwer(string selected_button)
