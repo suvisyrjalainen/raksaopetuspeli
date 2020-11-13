@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class ruuvvimeisseli : MonoBehaviour
+public class Sähkösaha : MonoBehaviour
 {
     public Canvas Quiz_canvas;//Its your Canvas
 
@@ -17,7 +17,7 @@ public class ruuvvimeisseli : MonoBehaviour
     private string score_string;
     //private string updated_scores_string = "Pisteet : " + "0" + "/10";
 
-    private string ruuvvimeisseli_correct_answer = "1";
+    private string Sähkösaha_correct_answer = "3";
     public Color correctColor;
     public Color wrongColor;
 
@@ -25,11 +25,6 @@ public class ruuvvimeisseli : MonoBehaviour
     void Start()
     {
         Quiz_canvas.gameObject.SetActive(false);
-
-        
-
-        
-
     }
 
     // Update is called once per frame
@@ -42,19 +37,17 @@ public class ruuvvimeisseli : MonoBehaviour
     {
         Debug.Log("Pressed left click.");
         Quiz_canvas.gameObject.SetActive(true);
-        
         button1.GetComponentInChildren<Text>().text = "Ruuvimeisseli";
         button2.GetComponentInChildren<Text>().text = "Ruuvinväännin";
-        button3.GetComponentInChildren<Text>().text = "Jakoavain";
+        button3.GetComponentInChildren<Text>().text = "Sähkösaha";
 
-
-        button1.onClick.AddListener(delegate { RuuvvimeisseliOnClickWithAnwer("1"); });
-        button2.onClick.AddListener(delegate { RuuvvimeisseliOnClickWithAnwer("2"); });
-        button3.onClick.AddListener(delegate { RuuvvimeisseliOnClickWithAnwer("3"); });
+        button1.onClick.AddListener(delegate { SähkösahaOnClickWithAnwer("1"); });
+        button2.onClick.AddListener(delegate { SähkösahaOnClickWithAnwer("2"); });
+        button3.onClick.AddListener(delegate { SähkösahaOnClickWithAnwer("3"); });
 
         ColorBlock cb1 = button1.colors;
-        cb1.pressedColor = correctColor;
-        cb1.selectedColor = correctColor;
+        cb1.pressedColor = wrongColor;
+        cb1.selectedColor = wrongColor;
         cb1.fadeDuration = 1;
         button1.colors = cb1;
 
@@ -66,16 +59,16 @@ public class ruuvvimeisseli : MonoBehaviour
 
 
         ColorBlock cb3 = button3.colors;
-        cb3.pressedColor = wrongColor;
-        cb3.selectedColor = wrongColor;
+        cb3.pressedColor = correctColor;
+        cb3.selectedColor = correctColor;
         cb3.fadeDuration = 1;
         button3.colors = cb3;
     }
 
-    void RuuvvimeisseliOnClickWithAnwer(string selected_button)
+    void SähkösahaOnClickWithAnwer(string selected_button)
     {
         Debug.Log("You have clicked the button " + selected_button);
-        if (selected_button == ruuvvimeisseli_correct_answer)
+        if (selected_button == Sähkösaha_correct_answer)
         {
 
             //Debug.Log(scores.text);

@@ -15,9 +15,9 @@ public class Vasara : MonoBehaviour
     public Text scores;
     private int score;
     private string score_string;
-    private string updated_scores_string = "Pisteet : " + "0" + "/10";
+    //private string updated_scores_string = "Pisteet : " + "0" + "/10";
 
-    private string correct_answer = "2";
+    private string vasara_correct_answer = "2";
     public Color correctColor;
     public Color wrongColor;
 
@@ -25,20 +25,12 @@ public class Vasara : MonoBehaviour
     void Start()
     {
         Quiz_canvas.gameObject.SetActive(false);
-
-        
-
-
-        
-
-
-
     }
 
     // Update is called once per frame
     void Update()
     {
-        scores.text = updated_scores_string;
+        //scores.text = updated_scores_string;
     }
 
     void OnMouseDown()
@@ -78,14 +70,14 @@ public class Vasara : MonoBehaviour
     void VasaraOnClickWithAnwer(string selected_button)
     {
         Debug.Log("You have clicked the button " + selected_button);
-        if (selected_button == correct_answer)
+        if (selected_button == vasara_correct_answer)
         {
 
-            Debug.Log(scores.text);
+            //Debug.Log(scores.text);
             Scores.score = Scores.score + 1;
-            score_string = Scores.score.ToString();
-            scores.text = "Pisteet : " + score_string + "/10";
-            updated_scores_string = "Pisteet : " + score_string + "/10";
+            //score_string = Scores.score.ToString();
+            //scores.text = "Pisteet : " + score_string + "/10";
+            //updated_scores_string = "Pisteet : " + score_string + "/10";
 
             Debug.Log(scores.text);
             StartCoroutine(WaitAndClosePanel());
@@ -99,7 +91,8 @@ public class Vasara : MonoBehaviour
     {
         yield return new WaitForSeconds(2);
         Quiz_canvas.gameObject.SetActive(false);
-        gameObject.SetActive(false);
+        this.GetComponent<Renderer>().enabled = false;
+
     }
 
 

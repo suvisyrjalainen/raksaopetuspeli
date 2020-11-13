@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class ruuvvimeisseli : MonoBehaviour
+public class Porakone : MonoBehaviour
 {
     public Canvas Quiz_canvas;//Its your Canvas
 
@@ -17,7 +17,7 @@ public class ruuvvimeisseli : MonoBehaviour
     private string score_string;
     //private string updated_scores_string = "Pisteet : " + "0" + "/10";
 
-    private string ruuvvimeisseli_correct_answer = "1";
+    private string Porakone_correct_answer = "2";
     public Color correctColor;
     public Color wrongColor;
 
@@ -25,11 +25,6 @@ public class ruuvvimeisseli : MonoBehaviour
     void Start()
     {
         Quiz_canvas.gameObject.SetActive(false);
-
-        
-
-        
-
     }
 
     // Update is called once per frame
@@ -42,25 +37,23 @@ public class ruuvvimeisseli : MonoBehaviour
     {
         Debug.Log("Pressed left click.");
         Quiz_canvas.gameObject.SetActive(true);
-        
-        button1.GetComponentInChildren<Text>().text = "Ruuvimeisseli";
-        button2.GetComponentInChildren<Text>().text = "Ruuvinväännin";
-        button3.GetComponentInChildren<Text>().text = "Jakoavain";
+        button1.GetComponentInChildren<Text>().text = "Jakoavain";
+        button2.GetComponentInChildren<Text>().text = "Porakone";
+        button3.GetComponentInChildren<Text>().text = "Saha";
 
-
-        button1.onClick.AddListener(delegate { RuuvvimeisseliOnClickWithAnwer("1"); });
-        button2.onClick.AddListener(delegate { RuuvvimeisseliOnClickWithAnwer("2"); });
-        button3.onClick.AddListener(delegate { RuuvvimeisseliOnClickWithAnwer("3"); });
+        button1.onClick.AddListener(delegate { PorakoneOnClickWithAnwer("1"); });
+        button2.onClick.AddListener(delegate { PorakoneOnClickWithAnwer("2"); });
+        button3.onClick.AddListener(delegate { PorakoneOnClickWithAnwer("3"); });
 
         ColorBlock cb1 = button1.colors;
-        cb1.pressedColor = correctColor;
-        cb1.selectedColor = correctColor;
+        cb1.pressedColor = wrongColor;
+        cb1.selectedColor = wrongColor;
         cb1.fadeDuration = 1;
         button1.colors = cb1;
 
         ColorBlock cb2 = button2.colors;
-        cb2.pressedColor = wrongColor;
-        cb2.selectedColor = wrongColor;
+        cb2.pressedColor = correctColor;
+        cb2.selectedColor = correctColor;
         cb2.fadeDuration = 1;
         button2.colors = cb2;
 
@@ -70,12 +63,14 @@ public class ruuvvimeisseli : MonoBehaviour
         cb3.selectedColor = wrongColor;
         cb3.fadeDuration = 1;
         button3.colors = cb3;
+
+
     }
 
-    void RuuvvimeisseliOnClickWithAnwer(string selected_button)
+    void PorakoneOnClickWithAnwer(string selected_button)
     {
         Debug.Log("You have clicked the button " + selected_button);
-        if (selected_button == ruuvvimeisseli_correct_answer)
+        if (selected_button == Porakone_correct_answer)
         {
 
             //Debug.Log(scores.text);

@@ -13,12 +13,14 @@ public class Scores : MonoBehaviour
     void Start()
     {
         txt = gameObject.GetComponent<Text>();
-        txt.text = "Pisteet : " + score + "/10";
+        //txt.text = "Pisteet : " + score + "/10";
+        Debug.Log(txt.text);
     }
 
     // Update is called once per frame
     void Update()
     {
         txt.text = "Pisteet : " + score + "/10";
+
     }
 }
