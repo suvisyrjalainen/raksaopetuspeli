@@ -33,7 +33,7 @@ public class Mouselook : MonoBehaviour
     void Update()
     {
 
-        //Cursor.visible = true;
+        Cursor.visible = true;
         //Cursor.lockState = CursorLockMode.Locked;
 
         mouseX = Input.GetAxis("Mouse X") * mouseSensivity * Time.deltaTime;
@@ -45,7 +45,7 @@ public class Mouselook : MonoBehaviour
         transform.localRotation = Quaternion.Euler(xRotation, 0f, 0f);
         playerBody.Rotate(Vector3.up * mouseX);
 
-        //SetCursorPos(xPos, yPos - 50);
+        //SetCursorPos(xPos, yPos -5);
 
     }
 }

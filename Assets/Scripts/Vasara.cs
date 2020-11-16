@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class Vasara : MonoBehaviour
 {
-    public Canvas Quiz_canvas;//Its your Canvas
+    public Canvas Quiz_canvas;//Its your Canvas 
 
     public Button button1;
     public Button button2;
@@ -79,7 +79,7 @@ public class Vasara : MonoBehaviour
             //scores.text = "Pisteet : " + score_string + "/10";
             //updated_scores_string = "Pisteet : " + score_string + "/10";
 
-            Debug.Log(scores.text);
+            Debug.Log(scores.text); 
             StartCoroutine(WaitAndClosePanel());
 
         }

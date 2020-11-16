@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class Porakone : MonoBehaviour
 {
-    public Canvas Quiz_canvas;//Its your Canvas
+    public Canvas Quiz_canvas;//Its your Canvas 
 
     public Button button1;
     public Button button2;

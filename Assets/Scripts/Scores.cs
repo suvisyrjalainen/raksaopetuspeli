@@ -17,7 +17,7 @@ public class Scores : MonoBehaviour
         Debug.Log(txt.text);
     }
 
-    // Update is called once per frame
+    // Update is called once per frame 
     void Update()
     {
         txt.text = "Pisteet : " + score + "/10";
