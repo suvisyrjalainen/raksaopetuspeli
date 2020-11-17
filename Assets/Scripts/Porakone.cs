@@ -92,6 +92,7 @@ public class Porakone : MonoBehaviour
         yield return new WaitForSeconds(2);
         Quiz_canvas.gameObject.SetActive(false);
         this.GetComponent<Renderer>().enabled = false;
+        this.GetComponent<Porakone>().enabled = false;
     }
 
 

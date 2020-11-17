@@ -75,11 +75,12 @@ public class Vasara : MonoBehaviour
 
             //Debug.Log(scores.text);
             Scores.score = Scores.score + 1;
+            
             //score_string = Scores.score.ToString();
             //scores.text = "Pisteet : " + score_string + "/10";
             //updated_scores_string = "Pisteet : " + score_string + "/10";
 
-            Debug.Log(scores.text); 
+            Debug.Log(scores.text);
             StartCoroutine(WaitAndClosePanel());
 
         }
@@ -92,7 +93,7 @@ public class Vasara : MonoBehaviour
         yield return new WaitForSeconds(2);
         Quiz_canvas.gameObject.SetActive(false);
         this.GetComponent<Renderer>().enabled = false;
-
+        this.GetComponent<Vasara>().enabled = false;
     }
 
 

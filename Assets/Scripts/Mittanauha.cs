@@ -92,6 +92,7 @@ public class Mittanauha : MonoBehaviour
         yield return new WaitForSeconds(2);
         Quiz_canvas.gameObject.SetActive(false);
         this.GetComponent<Renderer>().enabled = false;
+        this.GetComponent<Mittanauha>().enabled = false;
     }
 
 
