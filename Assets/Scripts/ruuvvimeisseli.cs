@@ -11,6 +11,7 @@ public class ruuvvimeisseli : MonoBehaviour
     public Button button2;
     public Button button3;
 
+    private bool is_pressed = false;
 
     public Text scores;
     private int score;
@@ -47,7 +48,7 @@ public class ruuvvimeisseli : MonoBehaviour
         button2.GetComponentInChildren<Text>().text = "Ruuvinväännin";
         button3.GetComponentInChildren<Text>().text = "Jakoavain";
 
-
+        is_pressed = true;
         button1.onClick.AddListener(delegate { RuuvvimeisseliOnClickWithAnwer("1"); });
         button2.onClick.AddListener(delegate { RuuvvimeisseliOnClickWithAnwer("2"); });
         button3.onClick.AddListener(delegate { RuuvvimeisseliOnClickWithAnwer("3"); });
@@ -75,11 +76,12 @@ public class ruuvvimeisseli : MonoBehaviour
     void RuuvvimeisseliOnClickWithAnwer(string selected_button)
     {
         Debug.Log("You have clicked the button " + selected_button);
-        if (selected_button == ruuvvimeisseli_correct_answer)
+        if (selected_button == ruuvvimeisseli_correct_answer && is_pressed)
         {
 
             //Debug.Log(scores.text);
             Scores.score = Scores.score + 1;
+            is_pressed = false;
             //score_string = Scores.score.ToString();
             //scores.text = "Pisteet : " + score_string + "/10";
             //updated_scores_string = "Pisteet : " + score_string + "/10";
@@ -97,8 +99,6 @@ public class ruuvvimeisseli : MonoBehaviour
         yield return new WaitForSeconds(2);
         Quiz_canvas.gameObject.SetActive(false);
         this.GetComponent<Renderer>().enabled = false;
-        this.GetComponent<ruuvvimeisseli>().enabled = false;
-
     }
 
 

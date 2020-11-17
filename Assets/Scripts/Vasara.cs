@@ -11,6 +11,7 @@ public class Vasara : MonoBehaviour
     public Button button2;
     public Button button3;
 
+    private bool is_pressed = false;
 
     public Text scores;
     private int score;
@@ -40,7 +41,8 @@ public class Vasara : MonoBehaviour
         button1.GetComponentInChildren<Text>().text = "Saha";
         button2.GetComponentInChildren<Text>().text = "Vasara";
         button3.GetComponentInChildren<Text>().text = "Mitta";
-        
+
+        is_pressed = true;
         button1.onClick.AddListener(delegate { VasaraOnClickWithAnwer("1"); });
         button2.onClick.AddListener(delegate { VasaraOnClickWithAnwer("2"); });
         button3.onClick.AddListener(delegate { VasaraOnClickWithAnwer("3"); });
@@ -70,12 +72,12 @@ public class Vasara : MonoBehaviour
     void VasaraOnClickWithAnwer(string selected_button)
     {
         Debug.Log("You have clicked the button " + selected_button);
-        if (selected_button == vasara_correct_answer)
+        if (selected_button == vasara_correct_answer && is_pressed)
         {
 
             //Debug.Log(scores.text);
             Scores.score = Scores.score + 1;
-            
+            is_pressed = false;
             //score_string = Scores.score.ToString();
             //scores.text = "Pisteet : " + score_string + "/10";
             //updated_scores_string = "Pisteet : " + score_string + "/10";
