@@ -10,30 +10,30 @@ public class Mouselook : MonoBehaviour
 {
     public float mouseSensivity = 800f;
     public float minXAngle = -70f;
-    public float maxXAngle = 90f;
+    public float maxXAngle = 30f;
 
     public Transform playerBody;
 
     public float mouseX;
     public float mouseY;
     private float xRotation = 0f;
-    //[DllImport("user32.dll")]
-    //static extern bool SetCursorPos(int X, int Y);
-    //int xPos = 0, yPos = 0;
+    [DllImport("user32.dll")]
+    static extern bool SetCursorPos(int X, int Y);
+    int xPos = 600, yPos = 300;
     // Start is called before the first frame update
     void Start()
     {
 
         //SetCursorPos(xPos, yPos - 5);
-        //Cursor.lockState = CursorLockMode.Locked;  
-
+        Cursor.lockState = CursorLockMode.Confined;
+        SetCursorPos(xPos, yPos);
     }
 
     // Update is called once per frame
     void Update()
     {
 
-        Cursor.visible = true;
+        
         //Cursor.lockState = CursorLockMode.Locked;
 
         mouseX = Input.GetAxis("Mouse X") * mouseSensivity * Time.deltaTime;
@@ -45,7 +45,7 @@ public class Mouselook : MonoBehaviour
         transform.localRotation = Quaternion.Euler(xRotation, 0f, 0f);
         playerBody.Rotate(Vector3.up * mouseX);
 
-        //SetCursorPos(xPos, yPos -5);
+        SetCursorPos(xPos, yPos);
 
     }
 }
