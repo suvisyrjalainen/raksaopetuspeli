@@ -96,6 +96,7 @@ public class Vasara : MonoBehaviour
         Quiz_canvas.gameObject.SetActive(false);
         this.GetComponent<Renderer>().enabled = false;
         this.GetComponent<Vasara>().enabled = false;
+        Cursor.lockState = CursorLockMode.Locked;
     }
 
 

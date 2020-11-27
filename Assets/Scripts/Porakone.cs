@@ -66,6 +66,7 @@ public class Porakone : MonoBehaviour
         cb3.fadeDuration = 1;
         button3.colors = cb3;
 
+        Cursor.lockState = CursorLockMode.None;
 
     }
 
@@ -96,6 +97,7 @@ public class Porakone : MonoBehaviour
         Quiz_canvas.gameObject.SetActive(false);
         this.GetComponent<Renderer>().enabled = false;
         this.GetComponent<Porakone>().enabled = false;
+        Cursor.lockState = CursorLockMode.Locked;
     }
 
 

@@ -65,6 +65,8 @@ public class Sähkösaha : MonoBehaviour
         cb3.selectedColor = correctColor;
         cb3.fadeDuration = 1;
         button3.colors = cb3;
+
+        Cursor.lockState = CursorLockMode.None;
     }
 
     void SähkösahaOnClickWithAnwer(string selected_button)
@@ -93,6 +95,8 @@ public class Sähkösaha : MonoBehaviour
         yield return new WaitForSeconds(2);
         Quiz_canvas.gameObject.SetActive(false);
         this.GetComponent<Renderer>().enabled = false;
+        this.GetComponent<Sähkösaha>().enabled = false;
+        Cursor.lockState = CursorLockMode.Locked;
     }
 
 

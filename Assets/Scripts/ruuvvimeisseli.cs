@@ -26,11 +26,6 @@ public class ruuvvimeisseli : MonoBehaviour
     void Start()
     {
         Quiz_canvas.gameObject.SetActive(false);
-
-        
-
-        
-
     }
 
     // Update is called once per frame
@@ -71,6 +66,8 @@ public class ruuvvimeisseli : MonoBehaviour
         cb3.selectedColor = wrongColor;
         cb3.fadeDuration = 1;
         button3.colors = cb3;
+
+        Cursor.lockState = CursorLockMode.None;
     }
 
     void RuuvvimeisseliOnClickWithAnwer(string selected_button)
@@ -99,6 +96,8 @@ public class ruuvvimeisseli : MonoBehaviour
         yield return new WaitForSeconds(2);
         Quiz_canvas.gameObject.SetActive(false);
         this.GetComponent<Renderer>().enabled = false;
+        this.GetComponent<ruuvvimeisseli>().enabled = false;
+        Cursor.lockState = CursorLockMode.Locked;
     }
 
 

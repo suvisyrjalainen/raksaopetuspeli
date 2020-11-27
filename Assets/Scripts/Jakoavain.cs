@@ -66,6 +66,7 @@ public class Jakoavain : MonoBehaviour
         cb3.fadeDuration = 1;
         button3.colors = cb3;
 
+        Cursor.lockState = CursorLockMode.None;
 
     }
 
@@ -95,6 +96,7 @@ public class Jakoavain : MonoBehaviour
         yield return new WaitForSeconds(2);
         Quiz_canvas.gameObject.SetActive(false);
         this.GetComponent<Renderer>().enabled = false;
+        Cursor.lockState = CursorLockMode.Locked;
     }
 
 
