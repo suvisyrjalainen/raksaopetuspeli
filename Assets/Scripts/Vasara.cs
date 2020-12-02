@@ -66,7 +66,7 @@ public class Vasara : MonoBehaviour
         cb3.fadeDuration = 1;
         button3.colors = cb3;
 
-
+        Cursor.lockState = CursorLockMode.None;
     }
 
     void VasaraOnClickWithAnwer(string selected_button)
