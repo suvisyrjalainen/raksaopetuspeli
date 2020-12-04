@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 
 public class Mouselook : MonoBehaviour
 {
-    public float mouseSensivity = 800f;
+    public float mouseSensivity = 1000f;
     public float minXAngle = -70f;
     public float maxXAngle = 30f;
 
@@ -19,20 +19,26 @@ public class Mouselook : MonoBehaviour
     private float xRotation = 0f;
     [System.Runtime.InteropServices.DllImport("user32.dll")]
     public static extern int SetCursorPos(int x, int y);
-    void SetCursorPositionToCenter()
-    {
-        SetCursorPos(Screen.width / 2, Screen.height / 2);
-    }
+    
     // Start is called before the first frame update
     void Start()
     {
-        Cursor.lockState = CursorLockMode.Locked;
+        //Cursor.lockState = CursorLockMode.Locked;
+        //SetCursorPos(Screen.width / 1, Screen.height / 1);
     }
 
+    //void SetCursorPositionToCenter()
+    //{
+        //SetCursorPos(Screen.width / 2, Screen.height / 2);
+    //}
     // Update is called once per frame
     void Update()
-    {   
-        //Cursor.lockState = CursorLockMode.Locked;
+    {
+        Rect screenRect = new Rect(0, 0, Screen.width, Screen.height);
+        if (!screenRect.Contains(Input.mousePosition)) {
+        return;
+            }
+        //Cursor.lockState = CursorLockMode.None;
 
         mouseX = Input.GetAxis("Mouse X") * mouseSensivity * Time.deltaTime;
         mouseY = Input.GetAxis("Mouse Y") * mouseSensivity * Time.deltaTime;

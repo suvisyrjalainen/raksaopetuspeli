@@ -66,7 +66,7 @@ public class Yhdistelmäjakoavain : MonoBehaviour
         cb3.fadeDuration = 1;
         button3.colors = cb3;
 
-        Cursor.lockState = CursorLockMode.None;
+        //Cursor.lockState = CursorLockMode.None;
     }
 
     void YhdistelmäjakoavainOnClickWithAnwer(string selected_button)
@@ -96,7 +96,8 @@ public class Yhdistelmäjakoavain : MonoBehaviour
         Quiz_canvas.gameObject.SetActive(false);
         this.GetComponent<Renderer>().enabled = false;
         this.GetComponent<Yhdistelmäjakoavain>().enabled = false;
-        Cursor.lockState = CursorLockMode.Locked;
+        this.GetComponent<BoxCollider>().enabled = false;
+        //Cursor.lockState = CursorLockMode.Locked;
     }
 
 
