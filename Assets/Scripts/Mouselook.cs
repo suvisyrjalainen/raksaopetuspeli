@@ -8,17 +8,18 @@ using System.Runtime.InteropServices;
 
 public class Mouselook : MonoBehaviour
 {
-    public float mouseSensivity = 1000f;
+    public float mouseSensivity = 500f;
     public float minXAngle = -70f;
     public float maxXAngle = 30f;
+   
 
     public Transform playerBody;
 
     public float mouseX;
     public float mouseY;
     private float xRotation = 0f;
-    [System.Runtime.InteropServices.DllImport("user32.dll")]
-    public static extern int SetCursorPos(int x, int y);
+    //[System.Runtime.InteropServices.DllImport("user32.dll")]
+    //public static extern int SetCursorPos(int x, int y);
     
     // Start is called before the first frame update
     void Start()
