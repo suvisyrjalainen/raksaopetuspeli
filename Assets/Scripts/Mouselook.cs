@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 
 public class Mouselook : MonoBehaviour
 {
-    public float mouseSensivity = 500f;
+    public float mouseSensivity = 1f;
     public float minXAngle = -70f;
     public float maxXAngle = 30f;
    
