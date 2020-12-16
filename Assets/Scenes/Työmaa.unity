@@ -17545,7 +17545,7 @@ GameObject:
   - component: {fileID: 932344821}
   - component: {fileID: 932344820}
   m_Layer: 5
-  m_Name: Canvas
+  m_Name: Liikkuminen
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -19819,7 +19819,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1133320927}
   m_LocalRotation: {x: -0, y: -0.71149856, z: -0, w: -0.7026877}
-  m_LocalPosition: {x: -0.058, y: 0.091, z: 0.089}
+  m_LocalPosition: {x: -0.058, y: 0.312, z: 0.089}
   m_LocalScale: {x: -0.27623564, y: 0.25680977, z: 0.24204247}
   m_Children: []
   m_Father: {fileID: 6975009453986586280}
@@ -31122,6 +31122,7 @@ GameObject:
   - component: {fileID: 1980771984}
   - component: {fileID: 1980771983}
   - component: {fileID: 1980771982}
+  - component: {fileID: 1980771986}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -31187,6 +31188,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: -179.286, z: 0}
+--- !u!65 &1980771986
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1980771981}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 6.092485, z: 1.4936442}
+  m_Center: {x: -2.2654567e-10, y: -0.6264997, z: 0.24682207}
 --- !u!1 &1996864675
 GameObject:
   m_ObjectHideFlags: 0
@@ -31362,7 +31376,7 @@ GameObject:
   - component: {fileID: 2001676704}
   - component: {fileID: 2001676703}
   m_Layer: 5
-  m_Name: Button
+  m_Name: MoverForward
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -31376,7 +31390,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2001676701}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0.7}
   m_LocalScale: {x: 0.39837113, y: 2.176535, z: 2.176535}
   m_Children:
   - {fileID: 535292865}
